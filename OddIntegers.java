@@ -12,7 +12,7 @@ public class OddIntegers {
         String outputFile = sc.next(); // User input
         sc.close();
 
-        ArrayList<Integer> arr = new ArrayList<Integer>();
+        ArrayList<IntCheck> arr = new ArrayList<IntCheck>();
         try {
             arr = fileManage.Read(inputFile); // Read file to array
         } catch (Exception e) { // If error
@@ -21,7 +21,7 @@ public class OddIntegers {
         }
 
         for (int i = 0; i < arr.size(); i++) { // Iterate through all integers in array
-            if (arr.get(i) % 2 == 0) { // If number is even
+            if (!arr.get(i).checkOdd()) { // If number is even
                 arr.remove(i); // Remove from array
             }
         }
