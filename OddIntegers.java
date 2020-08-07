@@ -20,14 +20,15 @@ public class OddIntegers {
             e.printStackTrace();
         }
 
+        ArrayList<IntCheck> arrODD = new ArrayList<IntCheck>();
         for (int i = 0; i < arr.size(); i++) { // Iterate through all integers in array
-            if (!arr.get(i).checkOdd()) { // If number is even
-                arr.remove(i); // Remove from array
+            if (arr.get(i).checkOdd()) {
+                arrODD.add(arr.get(i));
             }
         }
 
         try {
-            fileManage.Write(arr, outputFile);
+            fileManage.Write(arrODD, outputFile);
             System.out.println("All data written to the file " + outputFile); // Prompt completion
         } catch (Exception e) { // If error
             System.out.println("Cannot open the file");
