@@ -20,10 +20,7 @@ public class IntCheck {
         }
     }
 
-    public String toString() throws Exception {
-        if (this.type == null) {
-            throw new Exception("Int type has not been checked yet!");
-        }
+    public String toString() {
         return this.num + " is " + this.type + ". ";
     }
 }
