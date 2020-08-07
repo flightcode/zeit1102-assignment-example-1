@@ -23,4 +23,8 @@ public class IntCheck {
     public String toString() {
         return this.num + " is " + this.type + ". ";
     }
+
+    public String getType() {
+        return this.type.toString();
+    }
 }
