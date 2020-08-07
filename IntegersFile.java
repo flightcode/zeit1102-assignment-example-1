@@ -7,7 +7,6 @@ public class IntegersFile {
         output.createNewFile(); // Try creating file to write to
         FileWriter write = new FileWriter(outputFile); // Write
         for (int i = 0; i < data.size(); i++) { // Iterate through all odd integers in array
-            System.out.println(data.get(i));
             if (data.get(i).getType() != "EVEN" && data.get(i).getType() != "ODD") {
                 write.close();
                 throw new Exception("Int type has not been checked yet!");
