@@ -31,7 +31,7 @@ public class OddIntegers {
             fileManage.Write(arrODD, outputFile);
             System.out.println("All data written to the file " + outputFile); // Prompt completion
         } catch (Exception e) { // If error
-            System.out.println("Cannot open the file");
+            System.out.println("Error");
             e.printStackTrace();
         }
     }
