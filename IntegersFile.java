@@ -1,8 +1,8 @@
 import java.io.*;
 import java.util.*;
 
-public class IntegersFile {
-    public void Write(ArrayList<IntCheck> data, String outputFile) throws Exception {
+public class IntegersFile { // Manages save file
+    public void Write(ArrayList<IntCheck> data, String outputFile) throws Exception { // Write to save file
         File output = new File(outputFile);
         output.createNewFile(); // Try creating file to write to
         FileWriter write = new FileWriter(outputFile); // Write
@@ -16,7 +16,7 @@ public class IntegersFile {
         write.close();
     }
 
-    public ArrayList<IntCheck> Read(String inputFile) throws Exception {
+    public ArrayList<IntCheck> Read(String inputFile) throws Exception { // Read save file
         ArrayList<IntCheck> arr = new ArrayList<IntCheck>(); // Create array to store numbers
         File input = new File(inputFile);
         if (!input.exists()) {

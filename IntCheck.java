@@ -10,7 +10,7 @@ public class IntCheck {
         this.num = num;
     }
 
-    public Boolean checkOdd() {
+    public Boolean checkOdd() { // Check if num is odd, and assign appropriate type enum to object
         if (this.num % 2 == 0) {
             this.type = Type.EVEN;
             return false;
@@ -20,7 +20,7 @@ public class IntCheck {
         }
     }
 
-    public String toString() {
+    public String toString() { // Convert object to string
         return this.num + " is " + this.type + ". ";
     }
 
