@@ -9,7 +9,7 @@ public class IntegersFile { // Manages save file
         for (int i = 0; i < data.size(); i++) { // Iterate through all odd integers in array
             if (data.get(i).getType() != "EVEN" && data.get(i).getType() != "ODD") {
                 write.close();
-                throw new Exception("Int type has not been checked yet!");
+                throw new NotCheckedException("Int type has not been checked yet!");
             }
             write.write(data.get(i).toString()); // Write number to file
         }
