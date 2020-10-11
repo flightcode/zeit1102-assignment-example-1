@@ -7,10 +7,6 @@ public class IntegersFile { // Manages save file
         output.createNewFile(); // Try creating file to write to
         FileWriter write = new FileWriter(outputFile); // Write
         for (int i = 0; i < data.size(); i++) { // Iterate through all odd integers in array
-            if (data.get(i).getType() != "EVEN" && data.get(i).getType() != "ODD") {
-                write.close();
-                throw new NotCheckedException("Int type has not been checked yet!");
-            }
             write.write(data.get(i).toString()); // Write number to file
         }
         write.close();
@@ -23,8 +19,15 @@ public class IntegersFile { // Manages save file
             throw new Exception("Read file does not exist");
         }
         Scanner read = new Scanner(input);
-        while (read.hasNextInt()) { // Iterate through all integers in file (separated by " " or new line)
-            arr.add(new IntCheck(read.nextInt())); // Add integer to array
+        while (read.hasNext()) { // Iterate through all words/integer in file (separated by " " or new line)
+            try {
+                OddIntegers OddIntegers = new OddIntegers();
+                String s = read.next(); //Read next word/integer (Separated by " ")
+                OddIntegers.checkInteger(s); //Check if is integer
+                arr.add(new IntCheck(Integer.parseInt(s))); // Add integer to array
+            } catch(Exception e) {
+                System.out.println(e);
+            }
         }
         read.close();
         return arr; // Return Array List

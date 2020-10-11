@@ -35,4 +35,12 @@ public class OddIntegers { // Main class, requests input for file, and processes
             e.printStackTrace();
         }
     }
+
+    public void checkInteger(String s) throws Exception {
+        try {
+            Integer.parseInt(s); //Check if can parse into integer
+        } catch(Exception e) {
+            throw new NotIntegerException(s + " not in appropriate integer format... " + e); //Throw exception
+        }
+    } 
 }
